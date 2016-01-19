@@ -120,13 +120,16 @@ int main(int argc, char * argv[])
     for(int si = 0; si < switchNum; si++)
     {
         string outfileName = ("../test/outfile0_simple_"+ string(argv[2]) + '_' +
-                              string(argv[4]))+ "_tstNum_"+ string(argv[5])+"_b"+string(argv[6])+"_s"+num2str(si)+".csv";
+                              string(argv[4]))+ "_tstNum_"+ string(argv[5])+"_b"+
+                              string(argv[6])+"_s"+num2str(si)+"_a"+num2str(ALPHA)
+                              +"_g"+num2str(GAMMA)+"_e"+num2str(EPSILON0)+".csv";
         outfile0[si].open(outfileName.c_str());
 
         // wirte resource allocation
         //std::ofstream outfileR;
         outfileName = ("../test/resouce_assign_"+ string(argv[2]) + '_' +
-                       string(argv[4]))+ "_tstNum_"+ string(argv[5])+"_b"+string(argv[6])+"_s"+num2str(si)+".csv";
+                       string(argv[4]))+ "_tstNum_"+ string(argv[5])+"_b"+string(argv[6])+"_s"+num2str(si)+"_a"+num2str(ALPHA)
+                              +"_g"+num2str(GAMMA)+"_e"+num2str(EPSILON0)+".csv";
         outfileR[si].open(outfileName.c_str());
     }
 
@@ -273,7 +276,7 @@ int main(int argc, char * argv[])
 
     // -----------------------------------------------------------------------80
     // load packets from file
-    for (int fi = 0; fi < 12; fi++)
+    for (int fi = 0; fi < 6; fi++)
     {
         // --------------------------
         // Open trace file
@@ -1517,7 +1520,8 @@ void loadKeys2Filter(string& inFileName, vector<size_t>& mask, VUPrefix& vunique
         cout<<"* Write blackkey to file!"<<endl;
         ofstream blackKeyFileOut;
         BLACKFILENAME = "../test/blackkeyfile_" + string(argv[2]) + '_' +
-                        string(argv[4])+ "_tstNum_"+ string(argv[5])+"_b"+string(argv[6]);
+                        string(argv[4])+ "_tstNum_"+ string(argv[5])+"_b"+string(argv[6])+"_a"+num2str(ALPHA)
+                              +"_g"+num2str(GAMMA)+"_e"+num2str(EPSILON0);
         blackKeyFileOut.open(BLACKFILENAME.c_str());
         blackKeyFileOut.clear();
         blackKeyFileOut.close();
@@ -1528,7 +1532,8 @@ void loadKeys2Filter(string& inFileName, vector<size_t>& mask, VUPrefix& vunique
         cout<<"* Write aggr to file!"<<endl;
         ofstream aggrFileOut;
         AGGRFILENAME = "../test/aggrfile" + string(argv[2]) + '_' +
-                       string(argv[4])+ "_tstNum_"+ string(argv[5])+"_b"+string(argv[6]);
+                       string(argv[4])+ "_tstNum_"+ string(argv[5])+"_b"+string(argv[6])+"_a"+num2str(ALPHA)
+                              +"_g"+num2str(GAMMA)+"_e"+num2str(EPSILON0);
         aggrFileOut.open(AGGRFILENAME.c_str());
         aggrFileOut.clear();
         aggrFileOut.close();

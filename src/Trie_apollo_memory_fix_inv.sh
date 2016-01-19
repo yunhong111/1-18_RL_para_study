@@ -24,7 +24,7 @@ for i in $(seq 0 5)
 do
 	export OMP_NUM_THREADS=8
 
-	./trieNoiseMain ${keyFile} ${memSize[0]} ${ipfileFolder} ${feedbackPortion[2]} ${interval[0]} ${blackKeySize[1]} ${alpha[i]} ${gama[3]} ${epse[2]}
+	./trieNoiseMain ${keyFile} ${memSize[0]} ${ipfileFolder} ${feedbackPortion[2]} ${interval[0]} ${blackKeySize[1]} ${alpha[i]} ${gama[3]} ${epse[2]} &
  
 done
 
@@ -33,7 +33,7 @@ for j in $(seq 0 5)
 do
 	export OMP_NUM_THREADS=8
 
-	./trieNoiseMain ${keyFile} ${memSize[0]} ${ipfileFolder} ${feedbackPortion[2]} ${interval[0]} ${blackKeySize[1]} ${alpha[0]} ${gama[j]} ${epse[2]}
+	./trieNoiseMain ${keyFile} ${memSize[0]} ${ipfileFolder} ${feedbackPortion[2]} ${interval[0]} ${blackKeySize[1]} ${alpha[0]} ${gama[j]} ${epse[2]} &
  
 done
 
@@ -42,7 +42,7 @@ for l in $(seq 0 5)
 do
 	export OMP_NUM_THREADS=8
 
-	./trieNoiseMain ${keyFile} ${memSize[0]} ${ipfileFolder} ${feedbackPortion[2]} ${interval[0]} ${blackKeySize[1]} ${alpha[0]} ${gama[3]} ${epse[l]}
+	./trieNoiseMain ${keyFile} ${memSize[0]} ${ipfileFolder} ${feedbackPortion[2]} ${interval[0]} ${blackKeySize[1]} ${alpha[0]} ${gama[3]} ${epse[l]} &
  
 done
 
