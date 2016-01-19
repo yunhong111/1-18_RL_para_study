@@ -3,6 +3,12 @@
 
 float EPSILON0 = 0.8;
 int COLNUM = 5;
+
+// discount rate
+float GAMMA = 0.8;
+
+// learn rate
+float ALPHA = 0.1;
 /**
 constructor: initialize some v.r.
 */

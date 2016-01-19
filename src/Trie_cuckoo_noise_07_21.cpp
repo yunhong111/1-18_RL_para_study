@@ -25,6 +25,12 @@ int main(int argc, char * argv[])
     cout << "  Number of processors available = " << omp_get_num_procs ( ) << "\n";
     cout << "  Number of threads =              " << omp_get_max_threads ( ) << "\n";
 
+    // learn rate
+    ALPHA = strtof(argv[7],NULL);
+
+    // discount rate
+    GAMMA = strtof(argv[8],NULL);
+
     // -----------------------------------------------------------------------80
     // Global variables
     CUCKOO_BLACK_SIZE = strtof(argv[6],NULL); // black table size
@@ -852,7 +858,7 @@ int main(int argc, char * argv[])
                         }
                         else
                         {
-                            EPSILON0 = 0.20;
+                            EPSILON0 = strtof(argv[9],NULL); ;
                         }
                         rLearn[si][ri]->qLearn();
                         //printQList(rLearn[si][ri]);

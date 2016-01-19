@@ -24,10 +24,10 @@ using namespace std;
 /* Place to put all of my definitions etc. */
 
 // discount rate
-const float GAMMA = 0.2;
+extern float GAMMA;
 
 // learn rate
-const float ALPHA = 0.8;
+extern float ALPHA;
 
 // epsilon greedy
 extern float EPSILON0;
