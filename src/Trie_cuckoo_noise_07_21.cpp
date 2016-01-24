@@ -808,6 +808,7 @@ int main(int argc, char * argv[])
                     trie[si]->getLeaf(trie[si]->root,word,blackKeys,blackKeyNos, blackActions);
                     trie[si]->deleteChild(trie[si]->root);
                     delete trie[si];
+                    //free(trie[si]);
                     trie[si] = new Trie();            // define tree
 
                     int init = 0;
@@ -973,7 +974,8 @@ bool readFile0(ifstream& infile, vector<string> &flow, vector<size_t> &flow_cnt,
 
     //cout<<"* Flow size: "<<flow.size()<<endl;
 
-
+    //free(bTrie);
+    bTrie->deleteChild(bTrie->root);
     delete bTrie;
     return true;
 }

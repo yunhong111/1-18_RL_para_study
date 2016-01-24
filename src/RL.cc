@@ -132,7 +132,7 @@ void RLearn::reward(float ovs)
         switch(_actionSuggestIndex)
         {
         case 0:
-            _reward = -0.5;
+            _reward = 0;
             break;
         case 1:
             _reward = -1.0;
@@ -154,7 +154,7 @@ void RLearn::reward(float ovs)
         switch(_actionSuggestIndex)
         {
         case 0:
-            _reward = -0.5;
+            _reward = 0;
             break;
         case 1:
             _reward = 1.0;
